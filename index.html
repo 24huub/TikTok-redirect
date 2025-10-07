@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ar">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Redirecting...</title>
+  <script>
+    // روابط التيك توك
+    const links = [
+      "https://www.tiktok.com/@neafeas/video/7546254395202194695?is_from_webapp=1&sender_device=pc",
+      "https://www.tiktok.com/@neafeas/video/7546254395202194695?is_from_webapp=1&sender_device=pc"
+    ];
+
+    function randomRedirect() {
+      if (!links || links.length === 0) return;
+      const randomLink = links[Math.floor(Math.random() * links.length)];
+      const appLink = randomLink.replace('https://www.tiktok.com', 'tiktok://');
+      window.location.href = appLink;
+      setTimeout(() => {
+        window.location.href = randomLink;
+      }, 800);
+    }
+
+    window.onload = randomRedirect;
+  </script>
+</head>
+<body>
+</body>
+</html>
